@@ -1,0 +1,74 @@
+﻿@model KomisSigma1.Models.Samochodzik
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Samochodzik</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="MarkaID" class="control-label"></label>
+                <select asp-for="MarkaID" class="form-control" asp-items="ViewBag.MarkaID"></select>
+                <span asp-validation-for="MarkaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModelID" class="control-label"></label>
+                <select asp-for="ModelID" class="form-control" asp-items="ViewBag.ModelID"></select>
+                <span asp-validation-for="ModelID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RodzajNadwoziaID" class="control-label"></label>
+                <select asp-for="RodzajNadwoziaID" class="form-control" asp-items="ViewBag.RodzajNadwoziaID"></select>
+                <span asp-validation-for="RodzajNadwoziaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RodzajPaliwaID" class="control-label"></label>
+                <select asp-for="RodzajPaliwaID" class="form-control" asp-items="ViewBag.RodzajPaliwaID"></select>
+                <span asp-validation-for="RodzajPaliwaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kolor" class="control-label"></label>
+                <input asp-for="Kolor" class="form-control" />
+                <span asp-validation-for="Kolor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PojemnośćSilnika" class="control-label"></label>
+                <input asp-for="PojemnośćSilnika" class="form-control" />
+                <span asp-validation-for="PojemnośćSilnika" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Przebieg" class="control-label"></label>
+                <input asp-for="Przebieg" class="form-control" />
+                <span asp-validation-for="Przebieg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VIN" class="control-label"></label>
+                <input asp-for="VIN" class="form-control" />
+                <span asp-validation-for="VIN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cena" class="control-label"></label>
+                <input asp-for="Cena" class="form-control" />
+                <span asp-validation-for="Cena" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
